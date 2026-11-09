@@ -14,6 +14,16 @@ public class CandidateSet {
         }
     }
 
+    // Проверка наличия (contains)
+    public boolean containsCandidate(String name) {
+        return candidates.contains(name);
+    }
+
+    // Удаление из Set
+    public boolean removeCandidate(String name) {
+        return candidates.remove(name);
+    }
+
     public void showCandidates() {
         System.out.println("\n--- Уникальные кандидаты (Set) ---");
         for (String c : candidates) {
@@ -21,4 +31,3 @@ public class CandidateSet {
         }
     }
 }
-
