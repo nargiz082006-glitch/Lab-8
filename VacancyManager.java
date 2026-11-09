@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,8 +10,22 @@ public class VacancyManager {
         vacancies.add(v);
     }
 
+    // Поиск по ID
+    public Vacancy findById(int id) {
+        for (Vacancy v : vacancies) {
+            if (v.getId() == id) return v;
+        }
+        return null;
+    }
+
+    // Удаление
     public boolean removeVacancy(int id) {
         return vacancies.removeIf(v -> v.getId() == id);
+    }
+
+    // Сортировка List
+    public void sortBySalary() {
+        vacancies.sort(Comparator.comparingDouble(Vacancy::getSalary));
     }
 
     // 3 способа перебора List
